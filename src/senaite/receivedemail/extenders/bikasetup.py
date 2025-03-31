@@ -8,7 +8,7 @@ from zope.component import adapts
 from zope.interface import implementer
 
 from bika.lims.interfaces import IBikaSetup
-from seniate.receivedemail.config import _
+from senaite.receivedemail.config import _
 from senaite.receivedemail.extenders.fields import ExtBooleanField
 from senaite.receivedemail.extenders.fields import ExtTextField
 from senaite.receivedemail.interfaces import ISenaiteReceivedemailLayer
