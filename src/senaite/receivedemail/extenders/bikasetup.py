@@ -42,10 +42,11 @@ received_samples_email_body_field = ExtTextField(
         description=_(
             "description_bikasetup_received_samples_email_body",
             default="Set the email body text to be used by default when "
-            "sending out received samples notification to the selected recipients. "
-            "You can use reserved keywords: "
-            "$batch_id, $batch_title, $client_batch_number, $client_name, $lab_name, "
-            "$lab_address, $number_of_samples, $recipients",
+            "sending out received samples notification to the selected "
+            "recipients.  You can use reserved keywords: "
+            "$batch_id, $batch_title, $client_batch_number, "
+            "$client_name, $lab_name, $lab_address, "
+            "$number_of_samples, $recipients",
         ),
         default_mime_type="text/x-html",
         output_mime_type="text/x-html",
@@ -66,7 +67,7 @@ email_samples_receive_notifications_field = ExtBooleanField(
         ),
         description=_(
             "description_bikasetup_email_samples_receive_notifications",
-            default="Send email notification on samples received on a batch"
+            default="Send email notification on samples received on a batch",
         ),
     ),
 )
