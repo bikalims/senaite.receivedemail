@@ -1,0 +1,5 @@
+=====================
+senaite.receivedemail
+=====================
+
+User documentation
