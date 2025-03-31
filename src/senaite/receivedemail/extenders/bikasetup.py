@@ -7,11 +7,11 @@ from archetypes.schemaextender.interfaces import ISchemaExtender
 from zope.component import adapts
 from zope.interface import implementer
 
-from bika.extras.config import _
-from bika.extras.extenders.fields import ExtBooleanField
-from bika.extras.extenders.fields import ExtTextField
-from bika.extras.interfaces import IBikaExtrasLayer
 from bika.lims.interfaces import IBikaSetup
+from seniate.receivedemail.config import _
+from senaite.receivedemail.extenders.fields import ExtBooleanField
+from senaite.receivedemail.extenders.fields import ExtTextField
+from senaite.receivedemail.interfaces import ISenaiteReceivedemailLayer
 
 received_samples_email_body_field = ExtTextField(
     "ReceivedSamplesEmailBody",
@@ -75,7 +75,7 @@ email_samples_receive_notifications_field = ExtBooleanField(
 @implementer(ISchemaExtender, IBrowserLayerAwareExtender)
 class BikaSetupSchemaExtender(object):
     adapts(IBikaSetup)
-    layer = IBikaExtrasLayer
+    layer = ISenaiteReceivedemailLayer
 
     fields = [
         email_samples_receive_notifications_field,

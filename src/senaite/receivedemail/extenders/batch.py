@@ -6,10 +6,10 @@ from archetypes.schemaextender.interfaces import ISchemaExtender
 from zope.component import adapts
 from zope.interface import implementer
 
-from bika.extras.config import _
-from bika.extras.interfaces import IBikaExtrasLayer
-from bika.extras.extenders.fields import ExtBooleanField
 from bika.lims.interfaces import IBatch
+from senaite.receivedemail.config import _
+from senaite.receivedemail.interfaces import ISenaiteReceivedemailLayer
+from senaite.receivedemail.extenders.fields import ExtBooleanField
 
 
 notified_samples_received_field = ExtBooleanField(
@@ -27,7 +27,7 @@ notified_samples_received_field = ExtBooleanField(
 @implementer(ISchemaExtender, IBrowserLayerAwareExtender)
 class BatchSchemaExtender(object):
     adapts(IBatch)
-    layer = IBikaExtrasLayer
+    layer = ISenaiteReceivedemailLayer
 
     fields = [
         notified_samples_received_field,
