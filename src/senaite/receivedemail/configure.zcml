@@ -20,7 +20,7 @@
 
   <genericsetup:registerProfile
       name="default"
-      title="senaite.receivedemail"
+      title="SENAITE RECEIVED EMAIL"
       directory="profiles/default"
       description="Installs the senaite.receivedemail add-on."
       provides="Products.GenericSetup.interfaces.EXTENSION"
