@@ -84,10 +84,10 @@ def send_received_email(samples):
     except Exception as err_msg:
         batch = samples[0].getBatch()
         message = _(
-            "Cannot send email for receiving samples for ${batch_id} : ${error}",
+            "Cannot send email for receiving samples for ${batch_id} : ${err}",
             mapping={
                 "batch_id": api.get_id(batch),
-                "error": safe_unicode(err_msg),
+                "err": safe_unicode(err_msg),
             },
         )
         samples[0].plone_utils.addPortalMessage(message, "warning")
