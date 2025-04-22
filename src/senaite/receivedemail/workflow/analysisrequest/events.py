@@ -47,7 +47,8 @@ def can_send_notification(sample):
     """Returns whether the batch email has been sent for received samples
     """
     setup = api.get_setup()
-    esrn = setup.Schema()["EmailSampleReceiveNotifications"].getAccessor(setup)()
+    setup_schema = setup.Schema()
+    esrn = setup_schema["EmailSampleReceiveNotifications"].getAccessor(setup)()
     if not esrn:
         return False
 
