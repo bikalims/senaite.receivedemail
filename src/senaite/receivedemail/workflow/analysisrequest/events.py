@@ -144,6 +144,9 @@ def get_invalidation_email(samples):
     client_name = batch.getClient().Title() if batch.getClient() else ""
     batch_id = api.get_id(batch)
     batch_url = batch.absolute_url()
+    if batch.Schema().get("DueDate"):
+        batch_due_date = batch.Schema()["DueDate"].getAccessor(batch)()
+        batch_due_date = batch_due_date.strftime("%d %B %Y")
     client_batch_id = batch.getClientBatchID()
     rseb = setup.Schema()["ReceivedSamplesEmailBody"].getAccessor(setup)()
     body = Template(rseb)
@@ -152,6 +155,13 @@ def get_invalidation_email(samples):
             "batch_id": get_link(batch_url, value=batch_id),
             "batch_title": get_link_for(batch, csrf=False),
             "client_batch_number": get_link(batch_url, value=client_batch_id),
+            # Translation for bika.aquaculture, need to find a way to put this
+            # on bika.aquaculture
+            "case_id": get_link(batch_url, value=batch_id),
+            "case_title": get_link_for(batch, csrf=False),
+            "case_number": get_link(batch_url, value=client_batch_id),
+            "case_due_date": batch_due_date,
+            # End of Translation bika.aquaculture
             "client_name": client_name,
             "lab_name": get_link(lab_url, value=lab_name),
             "lab_address": "<br/>".join(lab_address),
