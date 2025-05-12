@@ -144,6 +144,8 @@ def get_invalidation_email(samples):
     client_name = batch.getClient().Title() if batch.getClient() else ""
     batch_id = api.get_id(batch)
     batch_url = batch.absolute_url()
+
+    batch_due_date = None
     if batch.Schema().get("DueDate"):
         batch_due_date = batch.Schema()["DueDate"].getAccessor(batch)()
         batch_due_date = batch_due_date.strftime("%d %B %Y")
