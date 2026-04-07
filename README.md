@@ -34,8 +34,8 @@ Add senaite.receivedemail to your custom add-ons list in the Docker-based Ingwe 
 ### License
 This project is licensed under the GNU General Public License v2.0 (GPL-2.0).
 
-Support & Professional Services
-[Bika Lab Systems](www.bikalabs.com) offers professional implementation, training, custom development, and support for bika.concrete.
+### Support & Professional Services
+[Bika Lab Systems](www.bikalabs.com) offers professional implementation, training, custom development, and support for senaite.receivedemail.
 
 Website: [https://www.bikalims.org](https://www.bikalims.org)
 Email: info@bikalims.org (or contact Lemoene directly)
