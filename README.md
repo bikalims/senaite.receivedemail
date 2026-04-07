@@ -4,15 +4,7 @@
 
 `senaite.receivedemail` extends **Senaite** (the modern core of Bika LIMS) with 
 
-It helps labs manage:
-- 
-- 
-
-### Features
-
-- 
-- 
-- 
+If you have product installed, an email is posted to the Client Contacts, that their Samples were received at the lab. The email text can be configured in the setup and Sample and their Batches hyperlinked
 
 ### Requirements
 
