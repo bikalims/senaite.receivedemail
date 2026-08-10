@@ -148,7 +148,8 @@ def get_invalidation_email(samples):
     batch_due_date = None
     if batch.Schema().get("DueDate"):
         batch_due_date = batch.Schema()["DueDate"].getAccessor(batch)()
-        batch_due_date = batch_due_date.strftime("%d %B %Y")
+        if batch_due_date:
+            batch_due_date = batch_due_date.strftime("%d %B %Y")
     client_batch_id = batch.getClientBatchID()
     rseb = setup.Schema()["ReceivedSamplesEmailBody"].getAccessor(setup)()
     body = Template(safe_unicode(rseb))
