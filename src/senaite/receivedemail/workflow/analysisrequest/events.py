@@ -12,7 +12,7 @@ from bika.lims import api
 from senaite.core.catalog import SAMPLE_CATALOG
 from bika.lims.api.mail import compose_email
 from bika.lims.api.mail import is_valid_email_address
-from bika.lims.interfaces import IContact
+from senaite.core.interfaces import IContact
 from bika.lims.utils import get_link
 from bika.lims.utils import get_link_for
 
