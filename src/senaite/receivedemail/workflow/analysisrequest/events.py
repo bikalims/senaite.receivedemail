@@ -96,7 +96,12 @@ def send_received_email(samples):
 def get_invalidation_email(samples):
     """Returns the sample invalidation MIME Message for the sample
     """
-    managers = api.get_users_by_roles("LabManager")
+    lab_managers_group = api.get_group("LabManagers")
+    managers = []
+
+    if lab_managers_group:
+        managers = lab_managers_group.getGroupMembers()
+
     contacts = []
     csids = []
     received_dates = set()
