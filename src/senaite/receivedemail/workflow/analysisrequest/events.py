@@ -62,12 +62,9 @@ def can_send_notification(sample):
         "getDateReceived": {"query": "", "range": "min"},
     }
     brains = api.search(query, SAMPLE_CATALOG)
-    if not brains:
-        return False
-
     samples = batch.getAnalysisRequests()
-    # if there are 4 samples there are 3 getDateReceived brains hence the + 1
-    # maybe this is a bug, needs more time investigating
+    # The current sample has not been reindexed yet. An empty result is
+    # therefore expected when receiving the only sample in a batch.
     if len(samples) == len(brains) + 1:
         # all samples have been received
         return True
